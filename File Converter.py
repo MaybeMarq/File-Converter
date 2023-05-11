@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter import filedialog
 from docx2pdf import convert
 from pillow_heif import register_heif_opener
+import platform
 
 
 # Resets the GUI title and removes indicator icons
@@ -17,7 +18,10 @@ def setTextBack():
 # JPEG in the same directory
 def convert_to_jpg():
     register_heif_opener()
-    filepath = filedialog.askopenfilename()
+    if platform.system() is "Windows":
+        filepath = filedialog.askopenfilename(initialdir="C:/")
+    else:
+        filepath = filedialog.askopenfilename(initialdir="/")
     try:
         if type(filepath) is tuple:
             label2.place(x=250, y=150)
