@@ -35,7 +35,7 @@ def convert_to_pdf():
 #---------------------------------------
 window = Tk()
 window.geometry("800x500")
-window.title("File Convertor")
+window.title("File Converter")
 
 #Title
 label = Label(window, text="Welcome to File Convertor", font=('Arial',18))
