@@ -13,4 +13,4 @@ This project uses the following libraries:
 - Can convert a Word document (.docx) in a PDF
 
 ## User Privacy
-No data regarding content of files, type of files, or current user is collected and shared with anyone. 
+No data regarding content of files, type of files, or current user is collected or shared with anyone. 
