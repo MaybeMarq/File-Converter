@@ -10,7 +10,7 @@ This project uses the following libraries:
 
 ## Features
 - Can convert most images into a JPEG image
-- Can convert a Word document (.docx) in a PDF
+- Can convert a Word document (.docx) into a PDF
 
 ## User Privacy
 No data regarding content of files, type of files, or current user is collected or shared with anyone. 
