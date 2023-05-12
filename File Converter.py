@@ -18,7 +18,7 @@ def setTextBack():
 # JPEG in the same directory
 def convert_to_jpg():
     register_heif_opener()
-    if platform.system() is "Windows":
+    if platform.system() == "Windows":
         filepath = filedialog.askopenfilename(initialdir="C:/")
     else:
         filepath = filedialog.askopenfilename(initialdir="/")
@@ -65,12 +65,12 @@ window = Tk()
 window.geometry("800x500")
 window.title("File Converter")
 
-#Title
+#Title text
 label = Label(window, text="Welcome to File Converter", font=('Arial',18))
 label.pack(pady=20)
 
 
-#Buttons
+# "Convert to JPG" and "Convert to PDF" Buttons
 buttonFrame = Frame(window)
 buttonFrame.columnconfigure(0, weight=1)
 buttonFrame.columnconfigure(1, weight=1)
@@ -80,7 +80,7 @@ pdfButton = Button(buttonFrame, text="Convert to PDF",font=('Arial',16), activeb
 pdfButton.grid(row = 0, column = 1, sticky=W+E)
 buttonFrame.pack(fill='x')
 
-#Visual cues for user (checkmark and x-mark)
+# Visual cues for user (checkmark and x-mark)
 image1 = PIL.Image.open("checkmark-png-5.png")
 check = ImageTk.PhotoImage(image1)
 label1 = tkinter.Label(image=check)
@@ -91,6 +91,7 @@ xMark = ImageTk.PhotoImage(image2)
 label2 = tkinter.Label(image=xMark)
 label2.image = xMark
 
+# Displays the GUI with its elements
 window.mainloop()
 
 
