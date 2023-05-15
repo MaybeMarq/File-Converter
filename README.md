@@ -17,5 +17,8 @@ For required library installation instructions, refer to the documentation file.
 ## User Privacy
 No data regarding content of files, type of files, or current user is collected or shared with anyone. 
 
+## Installation
+Refer to the documentation file which goes into detail of installing python, the required dependencies, and this script.
+
 ## Contribute
 To contribute, refer to the documentation file.
