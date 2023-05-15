@@ -91,6 +91,11 @@ xMark = ImageTk.PhotoImage(image2)
 label2 = tkinter.Label(image=xMark)
 label2.image = xMark
 
+#Application Title and Icon
+window.title("File Converter")
+icon = ImageTk.PhotoImage(PIL.Image.open("file-1453.png"))
+window.iconphoto(False, icon)
+
 # Displays the GUI with its elements
 window.mainloop()
 
