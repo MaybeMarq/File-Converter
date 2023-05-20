@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MaybeMarq"
+version = "1.0"
+license = {file = "LICENSE"}
+authors = [
+  { name="Marquis Skinner", email="theopinion132@gmail.com" },
+]
+description = "A python script that can convert most image types into a JPEG or a Word Document (.docx) into a PDF"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["Pillow", "docx2pdf", "pillow-heif"]
+
+[project.urls]
+Homepage = "https://github.com/MaybeMarq/File-Converter"
+documentation = "https://github.com/MaybeMarq/File-Converter"
