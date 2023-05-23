@@ -17,6 +17,10 @@ For required library installation instructions, refer to the documentation file.
 ## User Privacy
 No data regarding content of files, type of files, or current user is collected or shared with anyone. 
 
+## Prerequisites
+- Must have a system that has either Microsoft Office or LibreOffice for .docx to .pdf conversion
+- Must have a relatively current installation of Python (>3.0)
+
 ## Installation
 Refer to the documentation file which goes into detail of installing python, the required dependencies, and this script.
 
