@@ -1,5 +1,6 @@
 # Welcome
-Tired of using sketchy, poorly working websites to convert your files? File Convertor is a simple program used to convert any image file into a JPEG or a .docx document into a .pdf document.
+Tired of using sketchy, poorly working websites to convert your files? File Convertor is a simple command-line python script used to convert almost any image file into a JPEG or a .docx document into a .pdf document.
+![image](https://github.com/MaybeMarq/File-Converter/assets/62733985/9eebf3ed-a9d3-4e4e-98ca-0983e7de9d07)
 
 ## Dependencies
 This project uses the following libraries:
