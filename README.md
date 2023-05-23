@@ -4,10 +4,10 @@ Tired of using sketchy, poorly working websites to convert your files? File Conv
 
 ## Dependencies
 This project uses the following libraries:
-- PIL
-- tkinter
-- docx2pdf
-- pillow-heif
+- PIL - Image manipulation library
+- tkinter - Python's GUI toolkit
+- docx2pdf - Allows for the conversion from .docx to .pdf
+- pillow-heif - Additional library for manipulating .heif images (default file type for images taken on an iPhone)
 
 For required library installation instructions, refer to the documentation file.
 
@@ -16,7 +16,7 @@ For required library installation instructions, refer to the documentation file.
 - Can convert a Word document (.docx) into a PDF
 
 ## User Privacy
-No data regarding content of files, type of files, or current user is collected or shared with anyone. 
+No data regarding content of files, type of files, or current user is stored or shared with anyone. 
 
 ## Supported Operating Systems
 - Windows
