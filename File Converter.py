@@ -71,9 +71,9 @@ def convert_to_pdf():
                 window.after(4000,setTextBack)
             else: 
                 serve = server.UnoServer()
-                convert = converter.UnoConverter()
+                con = converter.UnoConverter()
                 process = serve.start()
-                convert.convert(inpath=""+filepath, outpath=""+filepath, convert_to="pdf")
+                con.convert(inpath=""+filepath, outpath=""+filepath, convert_to="pdf")
                 label1.place(x=250, y=150)
                 label.config(text="Successful!")
                 window.after(4000,setTextBack)
