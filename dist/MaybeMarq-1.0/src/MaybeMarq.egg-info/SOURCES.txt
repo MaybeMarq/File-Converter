@@ -1,9 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-src/MaybeMarq.egg-info/PKG-INFO
-src/MaybeMarq.egg-info/SOURCES.txt
-src/MaybeMarq.egg-info/dependency_links.txt
-src/MaybeMarq.egg-info/requires.txt
-src/MaybeMarq.egg-info/top_level.txt
-src/package/File Converter.py
