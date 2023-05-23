@@ -18,6 +18,11 @@ For required library installation instructions, refer to the documentation file.
 ## User Privacy
 No data regarding content of files, type of files, or current user is collected or shared with anyone. 
 
+## Supported Operating Systems
+- Windows
+- Linux
+Note: may work on Mac OS however it is not officially supported.
+
 ## Prerequisites
 - Must have a system that has either Microsoft Office or LibreOffice for .docx to .pdf conversion
 - Must have a relatively current installation of Python (>3.0)
