@@ -6,6 +6,9 @@ from tkinter import filedialog
 from docx2pdf import convert
 from pillow_heif import register_heif_opener
 import platform
+import converter
+import server
+import os
 
 
 # Resets the GUI title and removes indicator icons
@@ -20,6 +23,7 @@ def convert_to_jpg():
     register_heif_opener()
     if platform.system() == "Windows":
         filepath = filedialog.askopenfilename(initialdir="C:/")
+        
     else:
         filepath = filedialog.askopenfilename(initialdir="/")
     try:
@@ -42,22 +46,46 @@ def convert_to_jpg():
 # opens file dialog to allow user to choose the .docx file they want to convert and saves a copy...
 # as a .pdf file in the same directory
 def convert_to_pdf():
-    filepath = filedialog.askopenfilename()
-    try:
-        if type(filepath) is tuple:
+    if platform.system() == "Windows":
+        filepath = filedialog.askopenfilename(initialdir="C:/")
+        try:
+            if type(filepath) is tuple:
+                label2.place(x=250, y=150)
+                label.config(text="Unsuccessful :(")
+                window.after(4000,setTextBack)
+            else: 
+                convert(filepath)
+                label1.place(x=250, y=150)
+                label.config(text="Successful!")
+                window.after(4000,setTextBack)
+        except:
             label2.place(x=250, y=150)
-            label.config(text="Unsuccessful :(")
+            label.config(text="Unsuccesful :(")
             window.after(4000,setTextBack)
-        else: 
-            convert(filepath)
-            label1.place(x=250, y=150)
-            label.config(text="Successful!")
+    else:
+        filepath = filedialog.askopenfilename(initialdir="/home/")
+        try:
+            if type(filepath) is tuple:
+                label2.place(x=250, y=150)
+                label.config(text="Unsuccessful :(")
+                window.after(4000,setTextBack)
+            else: 
+                serve = server.UnoServer()
+                convert = converter.UnoConverter()
+                process = serve.start()
+                convert.convert(inpath=""+filepath, outpath=""+filepath, convert_to="pdf")
+                label1.place(x=250, y=150)
+                label.config(text="Successful!")
+                window.after(4000,setTextBack)
+                os.kill(process.pid, 0)
+        except Exception as e:
+            print(e)
+            label2.place(x=250, y=150)
+            label.config(text="Unsuccesful :(")
+            print(process.pid)
             window.after(4000,setTextBack)
-    except:
-        label2.place(x=250, y=150)
-        label.config(text="Unsuccesful :(")
-        window.after(4000,setTextBack)
-    
+            os.kill(process.pid, 0)
+        
 #---------------------------------------
 #shows Graphical User Interface for user
 #---------------------------------------
