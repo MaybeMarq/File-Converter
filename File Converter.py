@@ -6,7 +6,9 @@ from tkinter import filedialog
 from docx2pdf import convert
 from pillow_heif import register_heif_opener
 import platform
+import pathlib
 import converter
+import subprocess
 import server
 import os
 
@@ -60,7 +62,7 @@ def convert_to_pdf():
                 window.after(4000,setTextBack)
         except:
             label2.place(x=250, y=150)
-            label.config(text="Unsuccesful :(")
+            label.config(text="Unsuccessful :(")
             window.after(4000,setTextBack)
     else:
         filepath = filedialog.askopenfilename(initialdir="/home/")
@@ -69,22 +71,20 @@ def convert_to_pdf():
                 label2.place(x=250, y=150)
                 label.config(text="Unsuccessful :(")
                 window.after(4000,setTextBack)
-            else: 
-                serve = server.UnoServer()
-                con = converter.UnoConverter()
-                process = serve.start()
-                con.convert(inpath=""+filepath, outpath=""+filepath, convert_to="pdf")
+            else:
+                path = pathlib.Path(filepath)
+                newname = pathlib.Path(path.parent, path.name)
+                path.rename(newname)
+                print(os.path.dirname(filepath))
+                os.system('libreoffice --headless --convert-to pdf '+str(path)+' --outdir '+os.path.dirname(filepath))
                 label1.place(x=250, y=150)
                 label.config(text="Successful!")
                 window.after(4000,setTextBack)
-                os.kill(process.pid, 0)
         except Exception as e:
             print(e)
             label2.place(x=250, y=150)
-            label.config(text="Unsuccesful :(")
-            print(process.pid)
+            label.config(text="Unsuccessful :(")
             window.after(4000,setTextBack)
-            os.kill(process.pid, 0)
         
 #---------------------------------------
 #shows Graphical User Interface for user
