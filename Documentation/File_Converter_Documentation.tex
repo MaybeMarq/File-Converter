@@ -96,6 +96,8 @@
 %	SECTIONS
 %----------------------------------------------------------------------------------------
 \begin{fullwidth}
+\section{What is File Converter?}
+Tired of using sketchy, poorly working websites to convert your files? File Convertor is a simple command-line python script used to convert almost any image file into a JPEG or a .docx document into a .pdf document. It currently supports Windows and Linux. 
 \section{Installing Python and Required Libraries} % Top level section
 
 Python is the programming language used for this script. To run it, you  will need Python installed on your system. The process to install Python depends on your operating system. The details to install Python on the currently supported operating systems (Windows and Linux) are below.
@@ -147,10 +149,35 @@ Installing on Fedora requires the following command in the terminal:
 \begin{lstlisting}[language=bash]
 	$ sudo dnf install python3
 \end{lstlisting}
+
 \subsection{Installing Libraries}
+There are few external libraries this script relies on. They are listed below:
+\begin{enumerate}
+	\item \textbf{PIL} - Image manipulation library
+	\item \textbf{docx2pdf} - Allows for the conversion from .docx to .pdf
+	\item	\textbf{pillow-heif} - Additional library for manipulating .heif images (default file type for images taken on an iPhone)
+\end{enumerate}
+
+The installation process is pretty straightforward. Open up a terminal or command prompt and run these commands.
+
+\begin{lstlisting}[language=bash]
+	$ pip install Pillow
+	$ pip install docx2pdf
+	$ pip install pillow-heif
+\end{lstlisting}
+
+After running these commands, the supporting libraries should be installed on your system.
 
 \section{Downloading File Converter}
+Currently, there is no working executable file that allows plug and play. You can download the script and supporting images from the \href{https://github.com/MaybeMarq/File-Converter}{\underline{GitHub repository}}. You will also need to make sure the external libraries this script depends on can be accessed by the script. A simpler solution to this is being worked on but is currently not ready. 
+
 \section{Running File Converter}
+In your terminal or in your IDE of choice, go to the directory in which the script is stored. You can do this by using the 'cd' command followed by the name of the subsequent directories. When you are in the correct directory, run this command:
+
+\begin{lstlisting}[language=bash]
+	$ python3 FileConverter.py
+	\end{lstlisting}
+	
 \newpage
 
 \end{fullwidth}

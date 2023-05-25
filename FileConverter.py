@@ -1,5 +1,5 @@
 import PIL
-from PIL import Image, ImageTk
+from PIL import ImageTk
 import tkinter
 from tkinter import *
 from tkinter import filedialog
@@ -7,9 +7,6 @@ from docx2pdf import convert
 from pillow_heif import register_heif_opener
 import platform
 import pathlib
-import converter
-import subprocess
-import server
 import os
 
 
