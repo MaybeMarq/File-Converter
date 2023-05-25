@@ -33,6 +33,3 @@ Note: may work on Mac OS however it is not officially supported.
 
 ## Installation
 Refer to the documentation file which goes into detail of installing python, the required dependencies, and this script.
-
-## Contribute
-To contribute, refer to the documentation file.
