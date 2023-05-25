@@ -3,7 +3,7 @@ Tired of using sketchy, poorly working websites to convert your files? File Conv
 
 **Note: Currently being rewritten in Rust to provide better cross-platform support as well as to streamline installation and utilization.**
 
-![image](https://github.com/MaybeMarq/File-Converter/assets/62733985/9eebf3ed-a9d3-4e4e-98ca-0983e7de9d07)
+![Screenshot of landing page for GUI (taken on Fedora - Gnome 44)](https://github.com/MaybeMarq/File-Converter/assets/62733985/9eebf3ed-a9d3-4e4e-98ca-0983e7de9d07)
 
 ## Dependencies
 This project uses the following libraries:
