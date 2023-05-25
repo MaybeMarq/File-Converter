@@ -35,3 +35,6 @@ Note: may work on Mac OS however it is not officially supported.
 
 ## Installation
 Refer to the documentation file which goes into detail of installing python, the required dependencies, and this script.
+
+## Contributing
+This project was originally intended to be a simple tool for me to use. However, I thought it would be best to share my tool with anyone who wants to use it and I would love to see it continue to grow. If you would like to contribute whether that be in the form of  code, money, words of inspiration, or criticisms, I would wholeheartedly appreciate it. Please feel free to reach out to me. My contact information is provided on my profile.
