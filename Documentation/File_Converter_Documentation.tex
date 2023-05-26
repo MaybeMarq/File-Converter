@@ -176,8 +176,14 @@ In your terminal or in your IDE of choice, go to the directory in which the scri
 
 \begin{lstlisting}[language=bash]
 	$ python3 FileConverter.py
+	
 	\end{lstlisting}
 	
+	\section{Code Breakdown}
+	\subsection{Function: convert$\_$ to$\_$ jpg()}
+	This function provides functionality for converting images to JPEG. Linux and Windows have different file directory conventions and thus the function first checks which operating system is currently being used. Next it opens the file dialog window where the user can then choose which file to convert. If an error occurs, it is caught and the GUI tells the user that the conversion was unsuccessful. Otherwise, the GUI informs the user that the conversion was successful and where they can find the new image.
+	\subsection{Function: convert$\_$ to$\_$ pdf()} 
+	This function provides functionality for converting Microsoft Word (.docx) files to PDF. On Windows, it makes use of Microsoft Word in the background and thus needs an up-to-date version installed on the user's computer.  On Linux, it makes use of LibreOffice in the background and thus will need an up-to-date version installed on the user's computer. When the function is called, it first determines which operating system is being used due to differences in how file directories are named between operating systems.  Next it opens the file dialog window where the user can then choose which file to convert. If an error occurs, it is caught and the GUI tells the user that the conversion was unsuccessful. Otherwise, the GUI informs the user that the conversion was successful and where they can find the new PDF file.
 \section{Contributing}
 This project was originally intended to be a simple tool for me to use. However, I thought it would be best to share my tool with anyone who wants to use it and I would love to see it continue to grow. If you would like to contribute whether that be in the form of  code, money, words of inspiration, or criticisms, I would wholeheartedly appreciate it. Please feel free to reach out to me. My contact information is  provided on my \href{https://github.com/MaybeMarq}{\underline{GitHub profile}}.
 

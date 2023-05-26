@@ -11,10 +11,8 @@ import os
 
 
 # Resets the GUI title and removes indicator icons
-def setTextBack():
-    label.config(text="Welcome to File Converter")
-    label1.destroy()
-    label2.destroy()
+def close():
+    window.quit()
 
 # opens file dialog to allow user to choose the file they want to convert and saves a copy as a...
 # JPEG in the same directory
@@ -24,7 +22,7 @@ def convert_to_jpg():
         filepath = filedialog.askopenfilename(initialdir="C:/")
         
     else:
-        filepath = filedialog.askopenfilename(initialdir="/")
+        filepath = filedialog.askopenfilename(initialdir="/home/")
     try:
         if type(filepath) is tuple:
             label2.place(x=250, y=150)
@@ -36,11 +34,12 @@ def convert_to_jpg():
             newImg.save(filepath[:-4]+" JPEG.jpg") 
             label1.place(x=250, y=150)
             label.config(text="Successful!")
+            label3.config(text="You can find your converted image at "+filepath[:-4]+" JPEG.jpg")
             window.after(4000,setTextBack)
     except:
         label2.place(x=250, y=150)
         label.config(text="Unsuccessful :(")
-        window.after(4000,setTextBack)
+        window.after(4000,close)
 
 # opens file dialog to allow user to choose the .docx file they want to convert and saves a copy...
 # as a .pdf file in the same directory
@@ -56,6 +55,7 @@ def convert_to_pdf():
                 convert(filepath)
                 label1.place(x=250, y=150)
                 label.config(text="Successful!")
+                label3.config(text="You can find your converted file at "+filepath[:-4]+".pdf")
                 window.after(4000,setTextBack)
         except:
             label2.place(x=250, y=150)
@@ -76,6 +76,7 @@ def convert_to_pdf():
                 os.system('libreoffice --headless --convert-to pdf '+str(path)+' --outdir '+os.path.dirname(filepath))
                 label1.place(x=250, y=150)
                 label.config(text="Successful!")
+                label3.config(text="You can find your converted file at "+filepath[:-4]+".pdf")
                 window.after(4000,setTextBack)
         except Exception as e:
             print(e)
@@ -116,9 +117,11 @@ xMark = ImageTk.PhotoImage(image2)
 label2 = tkinter.Label(image=xMark)
 label2.image = xMark
 
+label3 = tkinter.Label(window, text = "What would you like to do?", font = ('Arial',16))
+label3.pack(side = BOTTOM, pady = 20)
 #Application Title and Icon
 window.title("File Converter")
-icon = ImageTk.PhotoImage(PIL.Image.open("file-1453.png"))
+icon = ImageTk.PhotoImage(PIL.Image.open("icon.png"))
 window.iconphoto(False, icon)
 
 # Displays the GUI with its elements
