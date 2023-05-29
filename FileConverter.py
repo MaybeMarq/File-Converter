@@ -26,19 +26,19 @@ def convert_to_jpg():
     try:
         if type(filepath) is tuple:
             label2.place(x=250, y=150)
-            label.config(text="Unsuccesful :(")
-            window.after(4000,setTextBack)
+            label.config(text="Unsuccesful \U00002639")
+            window.after(4000,close)
         else:
             img = PIL.Image.open(""+filepath)
             newImg = img.convert('RGB')
             newImg.save(filepath[:-4]+" JPEG.jpg") 
             label1.place(x=250, y=150)
-            label.config(text="Successful!")
+            label.config(text="Successful! \U0001F600")
             label3.config(text="You can find your converted image at "+filepath[:-4]+" JPEG.jpg")
-            window.after(4000,setTextBack)
+            window.after(4000,close)
     except:
         label2.place(x=250, y=150)
-        label.config(text="Unsuccessful :(")
+        label.config(text="Unsuccessful \U00002639")
         window.after(4000,close)
 
 # opens file dialog to allow user to choose the .docx file they want to convert and saves a copy...
@@ -49,25 +49,25 @@ def convert_to_pdf():
         try:
             if type(filepath) is tuple:
                 label2.place(x=250, y=150)
-                label.config(text="Unsuccessful :(")
-                window.after(4000,setTextBack)
+                label.config(text="Unsuccessful \U00002639")
+                window.after(4000,close)
             else: 
                 convert(filepath)
                 label1.place(x=250, y=150)
-                label.config(text="Successful!")
+                label.config(text="Successful! \U0001F600")
                 label3.config(text="You can find your converted file at "+filepath[:-4]+".pdf")
-                window.after(4000,setTextBack)
+                window.after(4000,close)
         except:
             label2.place(x=250, y=150)
-            label.config(text="Unsuccessful :(")
-            window.after(4000,setTextBack)
+            label.config(text="Unsuccessful \U00002639")
+            window.after(4000,close)
     else:
         filepath = filedialog.askopenfilename(initialdir="/home/")
         try:
             if type(filepath) is tuple:
                 label2.place(x=250, y=150)
-                label.config(text="Unsuccessful :(")
-                window.after(4000,setTextBack)
+                label.config(text="Unsuccessful \U00002639")
+                window.after(4000,close)
             else:
                 path = pathlib.Path(filepath)
                 newname = pathlib.Path(path.parent, path.name)
@@ -75,14 +75,14 @@ def convert_to_pdf():
                 print(os.path.dirname(filepath))
                 os.system('libreoffice --headless --convert-to pdf '+str(path)+' --outdir '+os.path.dirname(filepath))
                 label1.place(x=250, y=150)
-                label.config(text="Successful!")
+                label.config(text="Successful! \U0001F600")
                 label3.config(text="You can find your converted file at "+filepath[:-4]+".pdf")
-                window.after(4000,setTextBack)
+                window.after(4000,close)
         except Exception as e:
             print(e)
             label2.place(x=250, y=150)
-            label.config(text="Unsuccessful :(")
-            window.after(4000,setTextBack)
+            label.config(text="Unsuccessful \U00002639")
+            window.after(4000,close)
         
 #---------------------------------------
 #shows Graphical User Interface for user
